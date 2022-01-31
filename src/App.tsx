@@ -7,7 +7,6 @@ import {
   theme
 } from "@chakra-ui/react"
 import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Logo } from "./Logo"
 import {Currency} from "./components/Currency";
 import { CurrencyStack } from "./components/CurrencyStack";
 
