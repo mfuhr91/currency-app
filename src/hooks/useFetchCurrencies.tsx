@@ -7,7 +7,6 @@ export const useFetchCurrencies = () => {
         loading: true,
     });
 
-
     useEffect(() => {
         getCurrencies().then(
             currencies => {

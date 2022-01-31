@@ -4,6 +4,8 @@ import Moment from 'moment';
 
 export const Currency = ( currency:any ) => {
     let icon = getIconName(currency.tipo);
+    let fecha = Moment.utc(currency.fecha).local().format('HH:mm DD-MM-YYYY');
+
     return (
         <>
         <Box margin='25px' backgroundColor='rgb(21, 114, 161, 0.4)' padding='20px' paddingLeft='30px' borderRadius='35px' textAlign='left'>
@@ -24,7 +26,7 @@ export const Currency = ( currency:any ) => {
                     }).format(currency.valorVenta)}
                 </span>
             </p>
-            <p style={{textAlign:"right", marginTop:"15px"}}> Actualización:  {Moment(currency.fecha).locale('es').format('HH:mm DD-MM-YYYY')} </p>
+            <p style={{textAlign:"right", marginTop:"15px", fontSize:"14px"}}> Ultima actualización:  {fecha} </p>
         </Box>
         </>
     )
@@ -65,24 +67,6 @@ const getIconName = ( tipo: string ) => {
 
     return icon;
 }
-
-/*const getIconName = ( tipo: string ) => {
-    let icon: IconProp;
-    switch ( tipo ) {
-        case "euro_blue": icon = "euro-sign";
-            break;
-        case "dolar_oficial": icon = "dollar-sign";
-            break;
-        case "dolar_blue": icon =  "dollar-sign";
-            break;
-        case "bitcoin": icon = "btc";
-            break;
-        default:
-            icon = "ethereum";
-    }
-
-    return icon;
-}*/
 
 
 
