@@ -43,7 +43,7 @@ export const CurrencyStack = () => {
                                isPullable={true}
                                pullingContent={<PullContent />}
                                refreshingContent={<PullContent />}>
-                <Box width="100%">
+                <Box width="100%" className={"animate__animated animate__fadeIn"}>
                     {
                         currencies.map( (currency:any) => {
                             return <Currency key={ currency.id } { ...currency } className='currencyBox' ></Currency>
