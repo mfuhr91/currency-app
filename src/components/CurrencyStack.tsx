@@ -7,11 +7,20 @@ import { Currency } from './Currency';
 import { PullContent } from './pullToRefresh/PullContent';
 
 export const CurrencyStack = () => {
-    const { currencies, loading } = useFetchCurrencies();
-    const [ state, setState ] = useState({
+    const [{ currencies, loading }, setState ] = useState({
         currencies: [],
         loading: true,
     });
+    useEffect(() => {
+        getCurrencies().then(
+            currencies => {
+                setState({
+                    currencies: currencies,
+                    loading: false,
+                })
+            }
+        );
+    }, []);
 
     const handleRefresh = () => {
         return getCurrencies().then(
@@ -33,8 +42,7 @@ export const CurrencyStack = () => {
                 <PullToRefresh onRefresh={handleRefresh}
                                isPullable={true}
                                pullingContent={<PullContent />}
-                               refreshingContent={<PullContent />}
-                               resistance={5}>
+                               refreshingContent={<PullContent />}>
                 <Box width="100%">
                     {
                         currencies.map( (currency:any) => {
