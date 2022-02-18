@@ -8,7 +8,13 @@ export const Currency = ( currency:any ) => {
 
     return (
         <>
-        <Box margin='25px' backgroundColor='rgb(21, 114, 161, 0.4)' padding='20px' paddingLeft='30px' borderRadius='35px' textAlign='left'>
+        <Box margin='25px'
+             backgroundColor='#194563'
+             padding='20px'
+             paddingLeft='30px'
+             borderRadius='35px'
+             textAlign='left'
+             color='lightgray'>
             <h2 style={{textAlign: "left", marginBottom:"15px", fontSize:"20px", fontWeight:"bold"}}> {icon}  {getCurrencyName(currency.tipo)}  </h2>
             <p> Compra:
                 <span style={{fontSize:"20px", fontWeight:"bold", marginLeft:"10px"}}>

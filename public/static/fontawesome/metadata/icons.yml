@@ -2123,7 +2123,7 @@ border-none:
 border-style:
   changes:
     - 5.9.0
-  label: Border Style
+  label: Border styles
   search:
     terms: []
   styles:
@@ -16227,7 +16227,7 @@ shapes:
   search:
     terms:
       - blocks
-      - build
+      - docs
       - circle
       - square
       - triangle
