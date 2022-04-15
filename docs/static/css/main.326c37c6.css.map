@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.326c37c6.css","mappings":"AAEA,MACI,aACJ,CAEA,yBACI,MACI,cACJ,CACJ","sources":["styles/main.css"],"sourcesContent":["\n\n.Main {\n    max-width: 30%;\n}\n\n@media (max-width: 500px) {\n    .Main {\n        max-width: 100%;\n    }\n}"],"names":[],"sourceRoot":""}
