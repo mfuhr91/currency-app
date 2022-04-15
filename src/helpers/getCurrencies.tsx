@@ -1,6 +1,5 @@
 export const getCurrencies = async ()  => {
-    const url = `https://api-currency-exchange-mfuhr.herokuapp.com/api/ultimas-cotizaciones`;
+    const url = `https://go-api-currency-dp4xmh2yoa-uc.a.run.app/currencies`;
     const resp = await fetch( url );
-    const data = await resp.json()
-    return data;
+    return await resp.json();
 }

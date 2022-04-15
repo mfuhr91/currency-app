@@ -1,0 +1,11 @@
+
+
+.Main {
+    max-width: 30%;
+}
+
+@media (max-width: 500px) {
+    .Main {
+        max-width: 100%;
+    }
+}
