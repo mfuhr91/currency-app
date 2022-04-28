@@ -10,27 +10,35 @@ export const CurrencyStack = () => {
         currencies: [],
         loading: true,
     });
-    useEffect(() => {
-        getCurrencies().then(
-            currencies => {
-                setState({
-                    currencies: currencies,
-                    loading: false,
-                })
-            }
-        );
+    const delay = () => new Promise(res => setTimeout(res, Math.floor(3000 + Math.random() * 1500)));
+
+    /*const compareType = function (a: any, b: any) {
+        if (a.type > b.type) {
+            return 1;
+        }
+        if (a.type < b.type) {
+            return -1;
+        }
+        return 0;
+    }*/
+
+    useEffect(  () => {
+        getData();
     }, []);
 
     const handleRefresh = () => {
-        return getCurrencies().then(
-            currencies => {
-                setState({
-                    currencies: currencies,
-                    loading: false,
-                })
-            }
-        );
+        return getData();
     };
+
+    const getData: any = () => getCurrencies().then(
+        async (currencies: any) => {
+            await delay();
+            setState({
+                currencies: currencies,
+                loading: false,
+            })
+        }
+    );
 
     const color = useColorModeValue('black', 'lightgray')
 
