@@ -10,17 +10,6 @@ export const CurrencyStack = () => {
         currencies: [],
         loading: true,
     });
-    const delay = () => new Promise(res => setTimeout(res, Math.floor(3000 + Math.random() * 1500)));
-
-    /*const compareType = function (a: any, b: any) {
-        if (a.type > b.type) {
-            return 1;
-        }
-        if (a.type < b.type) {
-            return -1;
-        }
-        return 0;
-    }*/
 
     useEffect(  () => {
         getData();
@@ -31,8 +20,7 @@ export const CurrencyStack = () => {
     };
 
     const getData: any = () => getCurrencies().then(
-        async (currencies: any) => {
-            await delay();
+        (currencies: any) => {
             setState({
                 currencies: currencies,
                 loading: false,

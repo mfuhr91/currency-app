@@ -1,5 +1,5 @@
 export const getCurrencies = async ()  => {
-    const url = `https://go-api-currency-dp4xmh2yoa-uc.a.run.app/currencies`;
+    const url = `https://api-currency.mfuhr.com.ar/currencies`;
     const resp = await fetch( url );
     return await resp.json();
 }
